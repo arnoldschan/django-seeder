@@ -8,4 +8,4 @@ DATABASES = {
     }
 }
 
-INSTALLED_APPS += ["django_seed"]
+INSTALLED_APPS += ["django_seeder"]

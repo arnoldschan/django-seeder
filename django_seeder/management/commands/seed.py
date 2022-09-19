@@ -1,7 +1,7 @@
 import argparse
 from django.core.management.base import AppCommand
-from django_seed import Seed
-from django_seed.exceptions import SeederCommandError
+from django_seeder import Seed
+from django_seeder.exceptions import SeederCommandError
 from toposort import toposort_flatten
 from collections import defaultdict
 

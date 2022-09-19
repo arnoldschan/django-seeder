@@ -1,9 +1,9 @@
 import random, logging
 
-from django.db.models import ForeignKey, ManyToManyField, OneToOneField
+from django.db.models import ForeignKey, ManyToManyField, OneToOneField, AutoField
 
-from django_seed.exceptions import SeederException
-from django_seed.guessers import NameGuesser, FieldTypeGuesser
+from django_seeder.exceptions import SeederException
+from django_seeder.guessers import NameGuesser, FieldTypeGuesser
 from django.db.utils import IntegrityError
 from django.db import transaction
 
@@ -90,7 +90,7 @@ class ModelSeeder(object):
 
             field_name = field.name
 
-            if field.primary_key:
+            if field.primary_key and isinstance(field, AutoField):
                 continue
 
             # If user provides dict with data in 'seeder.add_entity(Model, num, data)', no reason to guess format.

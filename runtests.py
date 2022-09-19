@@ -13,14 +13,14 @@ def configure(databases):
     settings.configure(
         DATABASES=databases,
         INSTALLED_APPS=(
-            'django_seed',
+            'django_seeder',
             'django_nose',
         ),
         TEST_RUNNER='django_nose.NoseTestSuiteRunner',
         NOSE_ARGS=[
             '--exe',  # nose will skip files with the executable bit set without this
             '--with-coverage',
-            '--cover-package=django_seed',
+            '--cover-package=django_seeder',
         ],
         SITE_ID=1,
         SECRET_KEY=fake.sha1(),
@@ -66,7 +66,7 @@ def runtests():
     django.setup()
     TestRunner = get_runner(settings)
     test_runner = TestRunner(verbosity=1, interactive=True, failfast=False)
-    failures = test_runner.run_tests(['django_seed', ])
+    failures = test_runner.run_tests(['django_seeder', ])
     sys.exit(failures)
 
 

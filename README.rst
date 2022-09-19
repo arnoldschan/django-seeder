@@ -2,6 +2,11 @@
 
 ===========
 
+Fork from `django-seed <https://github.com/Brobin/django-seed>`_
+
+Source's documentation:
+
+
 *Django-seed* uses the `faker`_ library to generate test data for your Django models. This has been "hard-forked" from `django_faker`_ in order to support newer versions of Python and Django
 
 Django-seed allows you to write code to generate models, and seed your database with one simple ``manage.py`` command!
@@ -28,7 +33,7 @@ Installation
 
 To install django-seed, use pip::
 
-    pip install django-seed
+    pip install django-seeder
 
 Or to install from source::
 
@@ -43,7 +48,7 @@ Add it to your installed apps in ``settings.py``::
 
     INSTALLED_APPS = (
         ...
-        'django_seed',
+        'django_seeder',
     )
 
 -----
@@ -88,7 +93,7 @@ Ex: seeding 5 ``Game`` and 10 ``Player`` objects:
 
 .. code-block:: python
 
-    from django_seed import Seed
+    from django_seeder import Seed
 
     seeder = Seed.seeder()
 
@@ -148,11 +153,11 @@ To run django tests in a django environment, first make sure you have the packag
 
     $ python runtests.py
 
-or if you have ``django_seed`` in INSTALLED_APPS:
+or if you have ``django_seeder`` in INSTALLED_APPS:
 
 .. code-block:: bash
 
-    $ python manage.py test django_seed
+    $ python manage.py test django_seeder
 
 -------
 License
@@ -186,7 +191,7 @@ MIT. See `LICENSE`_ for more details.
     :target: https://pypi.python.org/pypi/django-seed
     :alt: Python 3.x
 
-.. |seed-logo| image:: assets/django_seed.png
+.. |seed-logo| image:: assets/django_seeder.png
     :alt: Django Seed
 
 .. |downloads| image:: https://pepy.tech/badge/django-seed

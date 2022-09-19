@@ -26,14 +26,14 @@ def find_version(*file_paths):
 
 
 setup(
-    name='django-seed',
-    version=find_version('django_seed', '__init__.py'),
-    author='Tobin Brown',
-    author_email='tobinjbrown@gmail.com',
-    packages=['django_seed', 'django_seed.management',
-              'django_seed.management.commands'],
+    name='django-seeder',
+    version=find_version('django_seeder', '__init__.py'),
+    author='Arnold Samuel Chan',
+    author_email='arnoldsamuelc@gmail.com',
+    packages=['django_seeder', 'django_seeder.management',
+              'django_seeder.management.commands'],
     include_package_data=True,
-    url='http://github.com/brobin/django-seed',
+    url='http://github.com/arnoldschan/django-seeder',
     license='MIT',
     description='Seed your Django project with fake data',
     classifiers=[
@@ -43,6 +43,7 @@ setup(
         'Framework :: Django',
         'Framework :: Django :: 2.2',
         'Framework :: Django :: 3.2',
+        'Framework :: Django :: 4.0',
         'Natural Language :: English',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
@@ -50,6 +51,7 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Software Development :: Testing',
         'Topic :: Utilities',

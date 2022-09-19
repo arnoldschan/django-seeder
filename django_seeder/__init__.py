@@ -2,7 +2,7 @@
 import random
 
 
-__version__ = '0.3.1'
+__version__ = '0.1.0'
 
 
 class Seed(object):
@@ -40,7 +40,7 @@ class Seed(object):
         code = cls.codename(locale)
         if code not in cls.seeders:
             faker = cls.fakers.get(code, None) or cls.faker(codename=code)
-            from django_seed import seeder
+            from django_seeder import seeder
             cls.seeders[code] = seeder.Seeder(faker)
 
         return cls.seeders[code]

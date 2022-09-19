@@ -14,10 +14,10 @@ from django.utils import timezone
 from faker import Faker
 from jsonfield import JSONField
 
-from django_seed import Seed
-from django_seed.exceptions import SeederCommandError, SeederException
-from django_seed.guessers import FieldTypeGuesser, NameGuesser
-from django_seed.seeder import Seeder
+from django_seeder import Seed
+from django_seeder.exceptions import SeederCommandError, SeederException
+from django_seeder.guessers import FieldTypeGuesser, NameGuesser
+from django_seeder.seeder import Seeder
 
 try:
     from django.utils.unittest import TestCase
@@ -333,7 +333,7 @@ class APISeedTestCase(TestCase):
         self.seed1 = Seed()
         self.seed2 = Seed()
 
-    def test_django_seed_singleton(self):
+    def test_django_seeder_singleton(self):
         self.assertEqual(self.seed1, self.seed2)
         self.assertIs(self.seed1, self.seed1)
 
@@ -367,17 +367,17 @@ class APISeedTestCase(TestCase):
 class SeedCommandTestCase(TestCase):
 
     def test_seed_command(self):
-        call_command('seed', 'django_seed', number=10)
+        call_command('seed', 'django_seeder', number=10)
 
     def test_invalid_number_arg(self):
         try:
-            call_command('seed', 'django_seed', number='asdf')
+            call_command('seed', 'django_seeder', number='asdf')
         except Exception as e:
             self.assertTrue(isinstance(e, SeederCommandError))
         pass
 
     def test_seed_command_forced_field(self):
-        call_command('seed', 'django_seed', '--seeder', 'Customer.name', 'BobbyLongName', '--number=12')
+        call_command('seed', 'django_seeder', '--seeder', 'Customer.name', 'BobbyLongName', '--number=12')
 
         customers = Customer.objects.all()
         
